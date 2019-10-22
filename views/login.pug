@@ -1,0 +1,15 @@
+extend layout
+
+block content
+    .container
+        .row
+            .col
+                h1 80's Corny Horror - Login
+                form(method="POST" action="/login")
+                    .form-group
+                        label(for='email') Email address
+                        input#email.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email' name="email")
+                    .form-group
+                        label(for='password') Password
+                        input#password.form-control(type='password' aria-describedby='emailHelp' placeholder='Enter password' name="password")
+                    button.btn.btn-primary Login

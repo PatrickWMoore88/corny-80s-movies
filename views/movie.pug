@@ -1,0 +1,9 @@
+extend explore
+
+block content
+    a(href='/explore/') Filler Shit!
+    h2= movies.title
+        ul
+            h3= "Year: " + movies.year
+            h3= "Rated: " + movies.movieRating
+            h3= "Score: " + movies.socialRating

@@ -1,0 +1,9 @@
+extend layout
+
+block content
+    h3 Shits about to get real!
+        ul
+            each movie in movies
+                li
+                    -var movieUrl = '/explore/' + movie.title
+                    a(href=movieUrl)= movie.title
