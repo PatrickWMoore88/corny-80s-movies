@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const models = require("../models");
 
 function loginRedirect (req, res, next) {
     if (req.session.user_id) {
@@ -20,13 +21,6 @@ function authenticate (req, res, next) {
 };
 
 
-// router.post("/loginUser", function (req, res) {
-//     if (req.session) {
-//         req.session.name = req.body.username;
-//         res.redirect("/dashboard");
-//     }
-// });
-
 router.get("/", authenticate, (req, res) => {
     console.log(req.session)
     res.render("account");
@@ -35,6 +29,39 @@ router.get("/", authenticate, (req, res) => {
 router.get("/dashboard", authenticate, (req, res) => {
     res.render("account/dashboard");
 });
+
+router.get("/favorites", authenticate, async (req, res) => {
+    try {
+        let data = {};
+        console.log("Error")
+        data.favMovies = await models.favorites.findAll({
+            where: {
+                movie_id: req.body.movie_id,
+                user_id: req.session.user_id,
+            }}
+        )
+        console.log(movie_id);
+        console.log(user_id);
+        res.render("account/favorites");
+    }catch(e){
+        res.send(e)
+    }
+    
+});
+
+router.post("/favorites/add", authenticate, async (req, res) => {
+    try {
+        await models.favorites.create({
+            user_id: req.session.user_id,
+            movie_id: movieId.id})
+            console.log(user_id);
+            console.log(movie_id);
+            console.log(dbUser)
+            res.redirect("account/dashboard")
+    }catch(e){
+        res.send(e)
+    }
+})
 
 router.get("/logout", (req, res) => {
     req.session.destroy();

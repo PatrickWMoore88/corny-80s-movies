@@ -7,3 +7,7 @@ block content
             h3= "Year: " + movies.year
             h3= "Rated: " + movies.movieRating
             h3= "Score: " + movies.socialRating
+            hr
+            form(method="POST" action="/account/favorites/add")
+                    input(type='hidden' name="movie_id" value=movie_id)
+                    button.btn.btn-primary Add to favorites
