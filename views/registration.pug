@@ -1,0 +1,16 @@
+extend layout
+
+block content
+    .container 
+        .row
+            .col
+                h1 Corny Horror Movies - Registration
+                p Please fill out the form below to get spoooooooooked
+                form(method="POST" action="/registerUser")
+                    .form-group
+                        label(for='username') Username
+                        input#username.form-control(type="text" aria-describedby='emailHelp' placeholder='Enter your username here' name="username")
+                    .form-group
+                        label(for='password') Password
+                        input#password.form-control(type='password' aria-describedby='emailHelp' placeholder='Enter your password here' name="password")
+                    button.btn.btn-primary Register
