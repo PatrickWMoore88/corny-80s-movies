@@ -8,7 +8,7 @@ function authenticate(req, res, next){
     }else{
         next();
     }
-}
+};
 
 router.get("/", async (req,res) =>{
     let data = {};
@@ -18,23 +18,10 @@ router.get("/", async (req,res) =>{
 
 router.get("/:title", async (req,res) =>{
     let data = {};
-    data.movies = await models.movies.findOne();
+    data.movies = await models.movies.findOne({where: {title: req.params.title}});
+    console.log(data.movies)
+    req.session.movie_id = data.movies.dataValues.id
     res.render("movie", data)
 });
-
-// router.get('/:title', async (req, res) => {
-//     console.log("FROGSSZZZZZZ")
-//     console.log(req.params.title)
-//     let movies = {};
-//     // movies.movieId = await 
-//     models.movies.findOne({
-//         where: {title: req.params.title}
-//     }).then((result) => {
-//         console.log("FROGZ 2: THE FROGANING" + result)
-//         movies.stuff = result
-//         console.log(movies)
-//     })
-//     res.render("movie", movies);
-// });
 
 module.exports = router;

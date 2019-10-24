@@ -62,7 +62,6 @@ app.post("/loginUser", async (req, res)=>{
             res.redirect("/account/dashboard");
             })
     }catch(e){
-     console.log("hello")
         res.send(e)
     }
 });

@@ -36,12 +36,10 @@ router.get("/favorites", authenticate, async (req, res) => {
         console.log("Error")
         data.favMovies = await models.favorites.findAll({
             where: {
-                movie_id: req.body.movie_id,
+                movie_id: req.session.movie_id,
                 user_id: req.session.user_id,
             }}
         )
-        console.log(movie_id);
-        console.log(user_id);
         res.render("account/favorites");
     }catch(e){
         res.send(e)
@@ -53,11 +51,8 @@ router.post("/favorites/add", authenticate, async (req, res) => {
     try {
         await models.favorites.create({
             user_id: req.session.user_id,
-            movie_id: movieId.id})
-            console.log(user_id);
-            console.log(movie_id);
-            console.log(dbUser)
-            res.redirect("account/dashboard")
+            movie_id: req.session.movie_id})
+            res.redirect("/account/favorites")
     }catch(e){
         res.send(e)
     }
