@@ -1,0 +1,6 @@
+extend account
+
+append base
+    h2 Welcome to the Dashboard, #{dbUser}, ya dingus!
+    if message
+        p= message

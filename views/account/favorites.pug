@@ -1,0 +1,11 @@
+extend account
+
+append base
+    h2 Welcome to the favorites, #{dbUser}, ya dingus!
+    
+    if !favMovies.length
+        p No movies added, you uncultured swine.
+ 
+    if favMovies.length
+        each movie in display
+            li= movie.title
