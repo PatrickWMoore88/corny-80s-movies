@@ -1,0 +1,12 @@
+node_modules/ exclude
+
+node_modules
+
+
+migrations/ exclude
+
+migrations
+
+.DS_Store/ exclude
+
+.DS_Store

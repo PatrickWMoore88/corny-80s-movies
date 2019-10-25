@@ -1,9 +1,10 @@
 extend layout
 
 block content
-    h3 Shits about to get real!
+    h3 Welcome to the Crypt! MUUUUHAHAHAHAHA!!
         ul
             each movie in movies
                 li
                     -var movieUrl = '/explore/' + movie.title
                     a(href=movieUrl)= movie.title
+                    

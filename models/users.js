@@ -2,9 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const users = sequelize.define('users', {
     username: DataTypes.TEXT,
-    password: DataTypes.TEXT,
-    fav_id: DataTypes.INTEGER,
-    toWatch_id: DataTypes.INTEGER
+    password: DataTypes.TEXT
   }, {});
   users.associate = function(models) {
     // associations can be defined here
