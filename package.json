@@ -1,5 +1,5 @@
 {
-  "name": "corny-80s-moives",
+  "name": "corny-80s-movies",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "engines": {
     "node": "^10.16.3",
-    "npm": "^6.9.0",
+    "npm": "^6.9.0"
   },
   "keywords": [],
   "author": "",
