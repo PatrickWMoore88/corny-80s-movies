@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    // "start": "npm run migrate && npm run serve",
     "start": "node app.js",
     "serve": "node app.js",
     "migrate": "npx sequelize-cli db:migrate",
@@ -13,7 +12,7 @@
   },
   "engines": {
     "node": "^10.16.3",
-    "npm": "^6.9.0",
+    "npm": "^6.9.0"
   },
   "keywords": [],
   "author": "",
