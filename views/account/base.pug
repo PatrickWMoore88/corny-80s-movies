@@ -5,14 +5,16 @@ html
         meta(http-equiv='X-UA-Compatible' content='ie=edge')
         title Corny Horror
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
-        link(rel="stylesheet" href="/styles/layout.css")
+        link(rel="stylesheet" href="/layout.css")
+        link(href='https://fonts.googleapis.com/css?family=Nosifer&display=swap' rel='stylesheet')
+
         block head
     
     body
-        .container
+        .header
             .row.d-flex.align-items-center.justify-content-between
                 .col.col-auto
-                    h5 Corny Movie Logo
+                    img.header-logo(src="/images/il_fullxfull.1629256349_sqvi.jpg" width='75' height='75' alt="Templating Language logo")
                 .col.col-auto
                     ul.nav
                         li.nav-item
