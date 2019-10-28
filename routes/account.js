@@ -78,9 +78,30 @@ router.get("/to-watch", authenticate, async (req, res) => {
 
 router.post("/favorites/add", authenticate, async (req, res) => {
     try {
-        await models.favorites.create({
+        let data = {};
+        data.userFavs = await models.favorites.create({
             user_id: req.session.user_id,
             movie_id: req.session.movie_id})
+            console.log(data.userFavs)
+            res.redirect("/account/favorites")
+    }catch(e){
+        res.send(e)
+    }
+});
+
+router.post("/favorites/delete/:movie_id", authenticate, async (req, res) => {
+    try {
+        let data = {};
+        data.favMoviesTitles = await models.favorites.findAll({
+            where: {
+                user_id: req.session.user_id
+            }}
+        ).then(results => results.map(result => result.dataValues));
+        console.log(req.params.title)
+        await models.favorites.destroy({
+            where:{
+                movie_id: req.params.movie_id
+            }});
             res.redirect("/account/favorites")
     }catch(e){
         res.send(e)
@@ -90,6 +111,17 @@ router.post("/favorites/add", authenticate, async (req, res) => {
 router.post("/to-watch/add", authenticate, async (req, res) => {
     try {
         await models.toWatchMovies.create({
+            user_id: req.session.user_id,
+            movie_id: req.session.movie_id})
+            res.redirect("/account/to-watch")
+    }catch(e){
+        res.send(e)
+    }
+})
+
+router.post("/to-watch/delete", authenticate, async (req, res) => {
+    try {
+        await models.toWatchMovies.destroy({
             user_id: req.session.user_id,
             movie_id: req.session.movie_id})
             res.redirect("/account/to-watch")

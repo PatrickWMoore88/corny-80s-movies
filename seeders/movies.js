@@ -20,7 +20,7 @@ module.exports = {
           {title: 'Poltergeist', year: '1982', socialRating: '7.3', movieRating: 'PG', createdAt: new Date(), updatedAt: new Date() },
           {title: 'Evil Dead 2', year: '1987', socialRating: '7.8', movieRating: 'R', createdAt: new Date(), updatedAt: new Date() },
           {title: 'An American Werewolf in London', year: '1981', socialRating: '8.4', movieRating: 'R', createdAt: new Date(), updatedAt: new Date() },
-          {title: 'Creepshow ', year: '1982', socialRating: '6.9', movieRating: 'R', createdAt: new Date(), updatedAt: new Date() },
+          {title: 'Creepshow', year: '1982', socialRating: '6.9', movieRating: 'R', createdAt: new Date(), updatedAt: new Date() },
           {title: 'Cujo', year: '1983', socialRating: '6.1', movieRating: 'R', createdAt: new Date(), updatedAt: new Date() },
           {title: 'Angel Heart', year: '1987', socialRating: '7.3', movieRating: 'R', createdAt: new Date(), updatedAt: new Date() },
           {title: 'Killer Klowns from Outer Space', year: '1988', socialRating: '6.2', movieRating: 'PG-13', createdAt: new Date(), updatedAt: new Date() },

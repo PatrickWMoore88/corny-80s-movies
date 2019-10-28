@@ -19,8 +19,7 @@ router.get("/", async (req,res) =>{
 router.get("/:title", async (req,res) =>{
     let data = {};
     data.movies = await models.movies.findOne({where: {title: req.params.title}});
-    console.log(data.movies)
-    req.session.movie_id = data.movies.dataValues.id
+    req.session.movie_id = data.movies.dataValues.id;
     res.render("movie", data)
 });
 
