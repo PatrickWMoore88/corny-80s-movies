@@ -2,7 +2,7 @@ module.exports = {
   development: {
     username: "patrickmoore",
     password: null,
-    database: "corny_80s_movies",
+    database: "test",
     host: "127.0.0.1",
     dialect: "postgres",
   },
