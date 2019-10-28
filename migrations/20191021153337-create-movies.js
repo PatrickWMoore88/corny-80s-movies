@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       socialRating: {
-        type: Sequelize.INTEGER
+        type: Sequelize.DOUBLE
       },
       movieRating: {
         type: Sequelize.CHAR
