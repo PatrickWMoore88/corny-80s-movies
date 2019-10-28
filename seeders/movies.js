@@ -11,7 +11,7 @@ module.exports = {
           {title: 'The Thing', year: '1982', social_rating: '8.1', movie_rating: 'R', createdAt: new Date(), updatedAt: new Date() },
           {title: 'Children of the Corn', year: '1984', social_rating: '5.7', movie_rating: 'R', createdAt: new Date(), updatedAt: new Date() },
           {title: 'The Lost Boys', year: '1987', social_rating: '7.3', movie_rating: 'R', createdAt: new Date(), updatedAt: new Date() },
-          {title: 'Pet Semetary', year: '1989', social_rating: '8.4', movie_rating: 'R', createdAt: new Date(), updatedAt: new Date() },
+          {title: 'Pet Sematary', year: '1989', social_rating: '8.4', movie_rating: 'R', createdAt: new Date(), updatedAt: new Date() },
           {title: 'Christine', year: '1983', social_rating: '6.7', movie_rating: 'R', createdAt: new Date(), updatedAt: new Date() },
           {title: 'Childs Play', year: '1988', social_rating: '6.6', movie_rating: 'R', createdAt: new Date(), updatedAt: new Date() },
           {title: 'Gremlins', year: '1984', social_rating: '7.3', movie_rating: 'R', createdAt: new Date(), updatedAt: new Date() },

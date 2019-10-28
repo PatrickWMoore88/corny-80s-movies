@@ -54,7 +54,7 @@ app.get("/login", (req, res) => {
 app.post("/loginUser", async (req, res)=>{
     try{
         let dbUser = await models.users.findOne({where: {user_name: req.body.user_name}});
-        if(!dbUser) throw new Error("Get the fuck outta herrreee!");
+        if(!dbUser) throw new Error("Get outta herrreee!");
         bcrypt.compare(req.body.password, dbUser.password, (err, same) =>{
             if(err) throw err;
             if(!same) throw new Error("Nope!");
