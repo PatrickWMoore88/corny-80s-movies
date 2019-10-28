@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const movies = sequelize.define('movies', {
     title: DataTypes.TEXT,
     year: DataTypes.INTEGER,
-    socialRating: DataTypes.Numeric,
+    socialRating: DataTypes.STRING,
     movieRating: DataTypes.CHAR
   }, {});
   movies.associate = function(models) {
