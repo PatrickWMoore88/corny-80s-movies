@@ -22,7 +22,6 @@ function authenticate (req, res, next) {
 
 
 router.get("/", authenticate, (req, res) => {
-    console.log(req.session)
     res.render("account");
 });
 

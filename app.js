@@ -33,13 +33,13 @@ app.get('/registration', function (req, res) {
 
 app.post('/registerUser', async (req, res) =>{
     try{
-        let registeredUser = await models.users.findOne({where: {username: req.body.username}});
+        let registeredUser = await models.users.findOne({where: {user_name: req.body.user_name}});
         if (registeredUser) {
             throw new Error("That username has already been taken. Booooo!");
         }
         let encrypted = bcrypt.hashSync(req.body.password, 10)
             models.users.create({
-                username: req.body.username,
+                user_name: req.body.user_name,
                 password: encrypted})     
     }catch(e){
         res.send(e);
@@ -53,7 +53,7 @@ app.get("/login", (req, res) => {
 
 app.post("/loginUser", async (req, res)=>{
     try{
-        let dbUser = await models.users.findOne({where: {username: req.body.username}});
+        let dbUser = await models.users.findOne({where: {user_name: req.body.user_name}});
         if(!dbUser) throw new Error("Get the fuck outta herrreee!");
         bcrypt.compare(req.body.password, dbUser.password, (err, same) =>{
             if(err) throw err;

@@ -14,12 +14,6 @@ module.exports = {
       password: {
         type: Sequelize.TEXT
       },
-      fav_Id: {
-        type: Sequelize.INTEGER
-      },
-      toWatch_Id: {
-        type: Sequelize.INTEGER
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
