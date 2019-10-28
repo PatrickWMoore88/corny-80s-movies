@@ -14,10 +14,10 @@ module.exports = {
       year: {
         type: Sequelize.INTEGER
       },
-      socialRating: {
+      social_rating: {
         type: Sequelize.STRING
       },
-      movieRating: {
+      movie_rating: {
         type: Sequelize.CHAR
       },
       createdAt: {
