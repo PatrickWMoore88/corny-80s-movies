@@ -102,10 +102,10 @@ router.post("/favorites/delete/:movie_id", authenticate, async (req, res) => {
   try {
     let data = {};
     data.favMoviesTitles = await models.favorites
-      .findAll({
+      .one({
         where: {
           user_id: req.session.user_id,
-          movie_id: movie_id
+          movie_id: id
         }
       })
       .then(results => results.map(result => result.dataValues));
