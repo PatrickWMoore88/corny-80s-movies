@@ -109,7 +109,7 @@ router.post("/favorites/delete/:movie_id", authenticate, async (req, res) => {
       })
       .then(results => results.map(result => result.dataValues));
     console.log(req.params.title);
-    await models.favorites.movie_id.destroy({
+    await models.favorites.destroy({
       where: {
         movie_id: req.params.movie_id
       }
