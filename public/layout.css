@@ -27,6 +27,10 @@ body {
   text-shadow: 3px 5px red;
 }
 
+li {
+  list-style-type: none;
+}
+
 a,
 a:hover,
 a:focus {
