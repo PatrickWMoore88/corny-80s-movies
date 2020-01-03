@@ -1,13 +1,13 @@
 extend account
 
 append base
-    h2 Welcome to the 'Wet My Pants List', ya dingus!
+    h2 Welcome to the 'Scary Movies List'!
     
     if favMovies.length
         each title in favMovieTitles
             li= title 
             form(method="POST" action="/account/favorites/delete/:movie_id")
                     input(type='hidden' name="movie_id" value=movie_id)
-                    button.btn.btn-primary Slice from the 'Wet My Pants List'
+                    //- button.btn.btn-primary Slice from the 'Scary Movie List'
     else
-        p No movies added, you uncultured swine.
+        p No movies added, Check out the Movies List to add some here.

@@ -32,10 +32,10 @@ app.get("/registration", function(req, res) {
 
 app.post("/registerUser", async (req, res) => {
   try {
-    let registeredUser = await models.users.findOne({
+    var registeredUser = await models.users.findOne({
       where: { user_name: req.body.user_name }
     });
-    if (registeredUser) {
+    if (registeredUser === req.body.user_name) {
       throw new Error("That username has already been taken. Booooo!");
     }
     let encrypted = bcrypt.hashSync(req.body.password, 10);
@@ -46,7 +46,7 @@ app.post("/registerUser", async (req, res) => {
   } catch (e) {
     res.send(e);
   }
-  res.redirect("/login?registeredSuccessfully=true");
+  res.redirect("/login");
 });
 
 app.get("/login", (req, res) => {
@@ -82,4 +82,6 @@ app.post("/account/login", (req, res) => {
   res.redirect("/dashboard");
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080, () => {
+  console.log("Server is running on port 8080");
+});

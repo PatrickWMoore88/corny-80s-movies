@@ -1,10 +1,10 @@
 module.exports = {
   development: {
-    username: "patrickmoore",
+    username: "postgres",
     password: null,
-    database: "test",
+    database: "corny_80s_movies",
     host: "127.0.0.1",
-    dialect: "postgres",
+    dialect: "postgres"
   },
 
   production: {
@@ -15,4 +15,4 @@ module.exports = {
     host: process.env.DB_HOSTNAME,
     dialect: "postgres"
   }
-}
+};

@@ -18,13 +18,16 @@ html
                 .col.col-auto
                     ul.nav
                         li.nav-item
-                            a.nav-link.active(href='/') To Survival
+                            a.nav-link.active(href='/account/dashboard') Dashboard
                         li.nav-item
-                            a.nav-link(href="/explore") The Crypt
+                            a.nav-link(href="/explore") Movies List
                         li.nav-item
-                            a.nav-link(href='/about-us') About Us 
+                            a.nav-link(href="/account/favorites") Scary Movies List
                         li.nav-item
-                            a.nav-link(href="/account/dashboard") Bloodline
+                            a.nav-link(href='/account/to-watch') Corny Movies List
+                        li.nav-item
+                            a.nav-link(href='/account/logout') Logout
+
         .container
             include includes/account-header
         block base

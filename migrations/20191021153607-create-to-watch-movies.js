@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('toWatchMovies', {
+    return queryInterface.createTable("toWatchMovies", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,10 +9,27 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "users"
+          },
+          key: "id"
+        },
+        allowNull: false,
+        onDelete: "cascade",
+        onUpdate: "cascade"
       },
       movie_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: {
+            tableName: "movies"
+          },
+          key: "id"
+        },
+        onDelete: "cascade",
+        onUpdate: "cascade"
       },
       createdAt: {
         allowNull: false,
@@ -25,6 +42,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('toWatchMovies');
+    return queryInterface.dropTable("toWatchMovies");
   }
 };

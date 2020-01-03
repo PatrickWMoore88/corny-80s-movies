@@ -101,14 +101,12 @@ router.post("/favorites/add", authenticate, async (req, res) => {
 router.post("/favorites/delete/:movie_id", authenticate, async (req, res) => {
   try {
     let data = {};
-    data.favMoviesTitles = await models.favorites
-      .findAll({
-        where: {
-          user_id: req.session.user_id
-        }
-      })
-      .then(results => results.map(result => result.dataValues));
-    console.log(req.params.title);
+    data.favMoviesTitles = await models.favorites.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    });
+    // .then(results => results.map(result => result.dataValues));
     await models.favorites.destroy({
       where: {
         movie_id: req.params.movie_id
