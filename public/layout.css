@@ -1,12 +1,12 @@
 .header {
   background-color: rgb(68, 0, 0);
 }
-  
+
 .header-title {
   font-size: 20px;
   margin: 0;
 }
-  
+
 .content {
   background-color: rgb(65, 60, 60);
   min-height: 80vh;
@@ -14,21 +14,22 @@
 }
 
 body {
-  background-image: url('/images/7385b14d304cc62fa3fa8c29feca94fe.gif');
+  background-image: url("/images/7385b14d304cc62fa3fa8c29feca94fe.gif");
+  text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left;
   background-attachment: fixed;
   height: 100vh;
-  width:100%;
+  width: 100%;
   color: white;
-  font-family: 'Nosifer', cursive;
+  font-family: "Nosifer", cursive;
   text-shadow: 3px 5px red;
 }
 
 a,
 a:hover,
-a:focus{
-    color: yellow;
-    text-decoration: none;
+a:focus {
+  color: yellow;
+  text-decoration: none;
 }
